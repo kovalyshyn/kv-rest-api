@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI instance to serve KV API
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/kv-rest-api
+ExecStart=/usr/local/bin/uwsgi --ini kv.ini
+
+[Install]
+WantedBy=multi-user.target

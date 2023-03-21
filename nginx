@@ -1,0 +1,8 @@
+server {
+    listen 10080;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/opt/kv-rest-api/kv.sock;
+    }
+}
